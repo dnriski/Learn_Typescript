@@ -53,5 +53,21 @@ describe('It a function', function (){
         expect(callMe(10)).toBe(100)
         expect(callMe("riski")).toBe("RISKI")
     })
+    it('should function as parameter', function(){
+        function sayHello(name:string, filter:(name:string)=>string):string{
+            return `Hello ${filter(name)}`
+        }
+        function toUpper(name:string):string{
+            return name.toUpperCase()
+        }
+        expect(sayHello("Eko", toUpper)).toBe("Hello EKO")
+        expect(sayHello("Eko", function (name:string):string{
+            return name.toUpperCase()
+        })).toBe("Hello EKO")
+        expect(sayHello("Eko",  (name:string):string =>  name.toUpperCase())).toBe("Hello EKO")
+
+    })
+
+
 
 })

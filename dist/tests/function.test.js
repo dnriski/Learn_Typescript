@@ -51,4 +51,7 @@ describe('It a function', function () {
         expect(callMe(10)).toBe(100);
         expect(callMe("riski")).toBe("RISKI");
     });
+
+
+
 });
