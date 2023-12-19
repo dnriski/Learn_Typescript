@@ -10,4 +10,12 @@ describe('Function Interface', () => {
         const names = ["Riski", "Rama", "Dwi"];
         console.log(names);
     });
+    it("Support indexable interface", function () {
+        const dictionary = {
+            "name": "Eko",
+            "address": "Indonesia"
+        };
+        expect(dictionary["name"]).toBe("Eko");
+        expect(dictionary["address"]).toBe("Indonesia");
+    });
 });
